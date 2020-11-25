@@ -9,7 +9,9 @@ Class Films{
     private $_dureeFilm;
     private $_synopFilm;
     private $_idStudio;
+    private $_studio;
     private $_idGenre;
+    private $_genre;
     /********************************Accesseurs **************************/
 
     public function getIdFilm()
@@ -17,7 +19,7 @@ Class Films{
         return $this->_idFilm;
     }
 
-    public function setIdFilm($idFilm)
+    public function setIdFilm(int $idFilm)
     {
         $this->_idFilm = $idFilm;
     }
@@ -47,7 +49,7 @@ Class Films{
         return $this->_coutFilm;
     }
 
-    public function setCoutFilm($coutFilm)
+    public function setCoutFilm(float $coutFilm)
     {
         $this->_coutFilm = $coutFilm;
     }
@@ -57,7 +59,7 @@ Class Films{
         return $this->_dureeFilm;
     }
 
-    public function setDureeFilm($dureeFilm)
+    public function setDureeFilm(int $dureeFilm)
     {
         $this->_dureeFilm = $dureeFilm;
     }
@@ -77,9 +79,10 @@ Class Films{
         return $this->_idStudio;
     }
 
-    public function setIdStudio($idStudio)
+    public function setIdStudio(int $idStudio)
     {
         $this->_idStudio = $idStudio;
+        $this->setStudio(StudiosManager::findById($idStudio));
     }
 
     public function getIdGenre()
@@ -87,9 +90,30 @@ Class Films{
         return $this->_idGenre;
     }
 
-    public function setIdGenre($idGenre)
+    public function setIdGenre(int $idGenre)
     {
         $this->_idGenre = $idGenre;
+        $this->setGenre(GenresManager::findById($idGenre));
+    }
+
+    public function getStudio()
+    {
+        return $this->_studio;
+    }
+
+    public function setStudio(Studios $studio)
+    {
+        $this->_studio = $studio;
+    }
+
+    public function getGenre()
+    {
+        return $this->_genre;
+    }
+
+    public function setGenre(Genres $genre)
+    {
+        $this->_genre = $genre;
     }
 
     /*********************** Constructeur *********************************/
@@ -124,6 +148,8 @@ Class Films{
         return "idFilm : ".$this->getIdFilm()." nomFilm : ".$this->getNomFilm()." date : ".$this->getDateFilm()->format("Y-m-d")." cout : ".$this->getCoutFilm()." durée :".$this->getDureeFilm()
         ." synopsis :".$this->getSynopFilm()." idStudio :".$this->getIdStudio()." idGenre:".$this->getIdGenre();
     }
+
+    
 
     
 }

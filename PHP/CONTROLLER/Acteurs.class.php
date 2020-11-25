@@ -1,13 +1,65 @@
 <?php
-class Acteur
+class Acteurs
 {
 
     /*****************Attributs***************** */
-    private $_xxx;
+    private $_idActeur;
+    private $_nomActeur;
+    private $_prenomActeur;
+    private $_origineActeur;
+    private $dateDenaissanceActeur;
 
     /*****************Accesseurs***************** */
 
-    
+    public function getIdActeur()
+    {
+        return $this->_idActeur;
+    }
+
+    public function setIdActeur(int $idActeur)
+    {
+        $this->_idActeur = $idActeur;
+    }
+
+    public function getNomActeur()
+    {
+        return $this->_nomActeur;
+    }
+
+    public function setNomActeur($nomActeur)
+    {
+        $this->_nomActeur = $nomActeur;
+    }
+
+    public function getPrenomActeur()
+    {
+        return $this->_prenomActeur;
+    }
+
+    public function setPrenomActeur($prenomActeur)
+    {
+        $this->_prenomActeur = $prenomActeur;
+    }
+
+    public function getOrigineActeur()
+    {
+        return $this->_origineActeur;
+    }
+
+    public function setOrigineActeur($origineActeur)
+    {
+        $this->_origineActeur = $origineActeur;
+    }
+
+    public function getDateDenaissanceActeur()
+    {
+        return $this->dateDenaissanceActeur;
+    }
+
+    public function setDateDenaissanceActeur($dateDenaissanceActeur)
+    {
+        $this->dateDenaissanceActeur = $dateDenaissanceActeur;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -19,8 +71,7 @@ class Acteur
     }
     public function hydrate($data)
     {
-        foreach ($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
             $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
             if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
             {
@@ -30,7 +81,7 @@ class Acteur
     }
 
     /*****************Autres Méthodes***************** */
-    
+
     /**
      * Transforme l'objet en chaine de caractères
      *
@@ -38,31 +89,13 @@ class Acteur
      */
     public function toString()
     {
+        return "\nID : ".$this->getIdActeur()."\nNom : ".$this->getNomActeur()."\nPrenom : ".$this->getPrenomActeur()."\nOrigine : ".$this->getOrigineActeur()."\nDate de naissance : ".$this->getDateDenaissanceActeur()->format("d/m/y") ;
+
+    }
+
+    public function Age()
+    {
         return "";
     }
 
-    /**
-     * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
-     *
-     * @param [type] $obj
-     * @return bool
-     */
-    public function equalsTo($obj)
-    {
-        return true;
-    }
-    /**
-     * Compare 2 objets
-     * Renvoi 1 si le 1er est >
-     *        0 si ils sont égaux
-     *        -1 si le 1er est <
-     *
-     * @param [type] $obj1
-     * @param [type] $obj2
-     * @return void
-     */
-    public static function compareTo($obj1, $obj2)
-    {
-        return 0;
-    }
 }

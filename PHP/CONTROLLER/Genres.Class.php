@@ -1,9 +1,9 @@
 <?php
-class Genre
+class Genres
 {
 
     /*****************Attributs***************** */
-    private $_idGenre;
+    private $_idGenre ;
     private $_libelleGenre;
     private $_desGenre;
 
@@ -14,7 +14,7 @@ class Genre
         return $this->_idGenre;
     }
 
-    public function setIdGenre($idGenre)
+    public function setIdGenre(int $idGenre)
     {
         $this->_idGenre = $idGenre;
     }
