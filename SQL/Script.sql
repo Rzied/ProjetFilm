@@ -1,19 +1,20 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-
+DROP DATABASE IF EXISTS projetFilms;
+CREATE DATABASE projetFilms;
+USE projetFilms;
 
 #------------------------------------------------------------
 # Table: Studios
 #------------------------------------------------------------
 
 CREATE TABLE Studios(
-        idStudio        Int  Auto_increment  NOT NULL ,
+        idStudio        Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomStudio       Varchar (50) NOT NULL ,
         paysStudio      Varchar (50) NOT NULL ,
         fondateurStudio Varchar (50) NOT NULL ,
         creationStudio  Date NOT NULL
-	,CONSTRAINT Studios_PK PRIMARY KEY (idStudio)
 )ENGINE=InnoDB;
 
 
@@ -22,10 +23,9 @@ CREATE TABLE Studios(
 #------------------------------------------------------------
 
 CREATE TABLE Genres(
-        idGenre      Int  Auto_increment  NOT NULL ,
+        idGenre      Int  Auto_increment  NOT NULL PRIMARY KEY ,
         libelleGenre Varchar (50) NOT NULL ,
         descGenre    Text NOT NULL
-	,CONSTRAINT Genres_PK PRIMARY KEY (idGenre)
 )ENGINE=InnoDB;
 
 
@@ -34,18 +34,14 @@ CREATE TABLE Genres(
 #------------------------------------------------------------
 
 CREATE TABLE Films(
-        idFilm    Int  Auto_increment  NOT NULL ,
+        idFilm    Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomFilm   Varchar (50) NOT NULL ,
         dateFilm  Date NOT NULL ,
-        coutFilm  Double NOT NULL ,
+        coutFilm  Int NOT NULL ,
         dureeFilm Int NOT NULL ,
         synopFilm Text NOT NULL ,
         idStudio  Int NOT NULL ,
         idGenre   Int NOT NULL
-	,CONSTRAINT Films_PK PRIMARY KEY (idFilm)
-
-	,CONSTRAINT Films_Studios_FK FOREIGN KEY (idStudio) REFERENCES Studios(idStudio)
-	,CONSTRAINT Films_Genres0_FK FOREIGN KEY (idGenre) REFERENCES Genres(idGenre)
 )ENGINE=InnoDB;
 
 
@@ -54,12 +50,11 @@ CREATE TABLE Films(
 #------------------------------------------------------------
 
 CREATE TABLE Realisateurs(
-        idRealisateur              Int  Auto_increment  NOT NULL ,
+        idRealisateur              Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomRealisateur             Varchar (50) NOT NULL ,
         prenomRealisateur          Varchar (50) NOT NULL ,
         dateDeNaissanceRealisateur Date NOT NULL ,
         paysOrigineRealisateur     Varchar (50) NOT NULL
-	,CONSTRAINT Realisateurs_PK PRIMARY KEY (idRealisateur)
 )ENGINE=InnoDB;
 
 
@@ -68,41 +63,44 @@ CREATE TABLE Realisateurs(
 #------------------------------------------------------------
 
 CREATE TABLE Acteurs(
-        idActeur              Int  Auto_increment  NOT NULL ,
+        idActeur              Int  Auto_increment  NOT NULL PRIMARY KEY,
         nomActeur             Varchar (50) NOT NULL ,
         prenomActeur          Varchar (50) NOT NULL ,
         origineActeur         Varchar (50) NOT NULL ,
         dateDeNaissanceActeur Date NOT NULL
-	,CONSTRAINT Acteurs_PK PRIMARY KEY (idActeur)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: Realisation
+# Table: Realisations
 #------------------------------------------------------------
 
-CREATE TABLE Realisation(
+CREATE TABLE Realisations(
+        idRealisation INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
         idRealisateur        Int NOT NULL ,
         idFilm               Int NOT NULL ,
         dateDebutRealisation Date NOT NULL ,
         dateFinRealisation   Date NOT NULL
-	,CONSTRAINT Realise_PK PRIMARY KEY (idRealisateur,idFilm)
-
-	,CONSTRAINT Realise_Realisateurs_FK FOREIGN KEY (idRealisateur) REFERENCES Realisateurs(idRealisateur)
-	,CONSTRAINT Realise_Films0_FK FOREIGN KEY (idFilm) REFERENCES Films(idFilm)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: Participation
+# Table: Participations
 #------------------------------------------------------------
 
-CREATE TABLE Participation(
+CREATE TABLE Participations(
+        idParticipation INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
         idActeur Int NOT NULL ,
         idFilm   Int NOT NULL
-	,CONSTRAINT Joue_PK PRIMARY KEY (idActeur,idFilm)
-
-	,CONSTRAINT Joue_Acteurs_FK FOREIGN KEY (idActeur) REFERENCES Acteurs(idActeur)
-	,CONSTRAINT Joue_Films0_FK FOREIGN KEY (idFilm) REFERENCES Films(idFilm)
 )ENGINE=InnoDB;
+
+ALTER TABLE Films ADD CONSTRAINT FK_Films_Studios FOREIGN KEY (idStudio) REFERENCES Studios(idStudio);
+ALTER TABLE Films ADD CONSTRAINT FK_Films_Genres FOREIGN KEY(idGenre) REFERENCES Genres(idGenre);
+
+ALTER TABLE Realisations ADD CONSTRAINT FK_Realisations_Realisateurs FOREIGN KEY (idRealisateur) REFERENCES Realisateurs(idRealisateur);
+ALTER TABLE Realisations ADD CONSTRAINT FK_Realisations_Films FOREIGN KEY (idFilm) REFERENCES Films(idFilm);
+
+ALTER TABLE Participations ADD CONSTRAINT FK_Participations_Acteurs FOREIGN KEY (idActeur) REFERENCES Acteurs(idActeur);
+ALTER TABLE Participations ADD CONSTRAINT FK_Participations_Films FOREIGN KEY (idFilm) REFERENCES Films(idFilm);
+
 

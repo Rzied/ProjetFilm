@@ -7,7 +7,7 @@ class Acteurs
     private $_nomActeur;
     private $_prenomActeur;
     private $_origineActeur;
-    private $dateDenaissanceActeur;
+    private $dateDeNaissanceActeur;
 
     /*****************Accesseurs***************** */
 
@@ -51,14 +51,14 @@ class Acteurs
         $this->_origineActeur = $origineActeur;
     }
 
-    public function getDateDenaissanceActeur()
+    public function getDateDeNaissanceActeur()
     {
-        return $this->dateDenaissanceActeur;
+        return $this->dateDeNaissanceActeur;
     }
 
-    public function setDateDenaissanceActeur($dateDenaissanceActeur)
+    public function setDateDeNaissanceActeur($dateDeNaissanceActeur)
     {
-        $this->dateDenaissanceActeur = $dateDenaissanceActeur;
+        $this->dateDeNaissanceActeur = $dateDeNaissanceActeur;
     }
     /*****************Constructeur***************** */
 
@@ -89,13 +89,15 @@ class Acteurs
      */
     public function toString()
     {
-        return "\nID : ".$this->getIdActeur()."\nNom : ".$this->getNomActeur()."\nPrenom : ".$this->getPrenomActeur()."\nOrigine : ".$this->getOrigineActeur()."\nDate de naissance : ".$this->getDateDenaissanceActeur()->format("d/m/y") ;
+        return "\nID : ".$this->getIdActeur()."\nNom : ".$this->getNomActeur()."\nPrenom : ".$this->getPrenomActeur()."\nOrigine : ".$this->getOrigineActeur()."\nDate de naissance : ".$this->getDateDeNaissanceActeur()->format("d/m/y") ;
 
     }
 
     public function Age()
     {
-        return "";
+        $auj= new DateTime("now");
+        $age=$auj->diff($this->getDateDeNaissanceActeur());
+        return $age->format("%y")*1;
     }
 
 }

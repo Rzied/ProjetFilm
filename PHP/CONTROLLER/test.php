@@ -12,13 +12,18 @@ spl_autoload_register("ChargerClasse");
 
 // echo $t->toString();
 
-//***************   Test Studio   *****************/+
+//***************   Test Acteur   *****************/+
 
 // $t = new Acteurs(["idActeur" => 5, "nomActeur" => "RJEB", "prenomActeur" => "Zied", "origineActeur" => "Tunisie", "dateDenaissanceActeur" => new DateTime("1991-05-29")]);
 // echo $t->toString();
+// echo "\n";
+// echo $t->age();
 
 
-//***************   Test Studio   *****************/+
+//***************   Test Genre   *****************/+
 
 // $t = new Genres(["idGenre" => 1, "libelleGenre" => "Action", "desGenre" => "Exploser les voitures et tuer tout le monde "]);
 // echo $t->toString();
+
+
+

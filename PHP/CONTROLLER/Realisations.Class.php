@@ -5,11 +5,83 @@ Class Realisations{
     private $_idRealisation;
     private $_idRealisateur;
     private $_idFilm;
-    private $_dateDebitRealisation;
+    private $_dateDebutRealisation;
     private $_dateFinRealisation;
     private $_realisateur;
     private $_film;
     /********************************Accesseurs **************************/
+
+    public function getIdRealisation()
+    {
+        return $this->_idRealisation;
+    }
+
+    public function setIdRealisation(int $idRealisation)
+    {
+        $this->_idRealisation = $idRealisation;
+    }
+
+    public function getIdRealisateur()
+    {
+        return $this->_idRealisateur;
+    }
+
+    public function setIdRealisateur(int $idRealisateur)
+    {
+        $this->_idRealisateur = $idRealisateur;
+        $this->setRealisateur(RealisateursManager::findById($idRealisateur));
+    }
+
+    public function getIdFilm()
+    {
+        return $this->_idFilm;
+    }
+
+    public function setIdFilm(int $idFilm)
+    {
+        $this->_idFilm = $idFilm;
+        $this->setFilm(FilmsManager::findById($idFilm));
+    }
+
+    public function getDateDebutRealisation()
+    {
+        return $this->_dateDebutRealisation;
+    }
+
+    public function setDateDebutRealisation($dateDebutRealisation)
+    {
+        $this->_dateDebutRealisation = $dateDebutRealisation;
+    }
+
+    public function getDateFinRealisation()
+    {
+        return $this->_dateFinRealisation;
+    }
+
+    public function setDateFinRealisation($dateFinRealisation)
+    {
+        $this->_dateFinRealisation = $dateFinRealisation;
+    }
+
+    public function getRealisateur()
+    {
+        return $this->_realisateur;
+    }
+
+    public function setRealisateur(Realisateurs $realisateur)
+    {
+        $this->_realisateur = $realisateur;
+    }
+
+    public function getFilm()
+    {
+        return $this->_film;
+    }
+
+    public function setFilm(Films $film)
+    {
+        $this->_film = $film;
+    }
 
     /*********************** Constructeur *********************************/
 
@@ -40,29 +112,15 @@ Class Realisations{
     * @return String
     */
     public function toString(){
-        return "";
+        return "idRéalisation : ".$this->getIdRealisation()." idRéalisateur : ".$this->getIdRealisateur()." idFilm : ".$this->getIdFilm()." dateDebut : ".$this->getDateDebutRealisation()." dateFin : ".$this->getDateFinRealisation();
     }
-    /**
-    * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
-    *
-    * @param [type] obj
-    * @return bool
-    */
-    public function equalsTo(){
-        return  "";
-    }
-    /**
-    * Compare 2 objets
-    * Renvoi 1 si le 1er est >
-    *        0 si ils sont égaux
-    *        -1 si le 1er est <
-    *
-    * @param [type] obj1
-    * @param [type] obj2
-    * @return void
-    */
-    public function compareTo(){
-        return "";
+
+
+    public function tempsRealisation(){
+        $dateFin=$this->getDateFinRealisation();
+        $dateDebut=$this->getDateDebutRealisation();
+        $tempsRealisation=$dateFin->diff($dateDebut,true);
+        return $tempsRealisation->format("%y-%m-%d");
     }
 
 }
