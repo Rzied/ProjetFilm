@@ -3,22 +3,22 @@ echo '
     <nav>
         <div></div>
         <div>
-        <a href="index.php?codePage=ListeFilm">
+        <a href="index.php?codePage=ListeFilms">
             <div class="boutons">
                 Liste des Films
             </div>
         </a>
-        <a href="index.php?codePage=ListeFilm">
+        <a href="index.php?codePage=ListeActeurs">
             <div class="boutons">
                 Liste des Acteurs
             </div>
         </a>
-        <a href="index.php?codePage=ListeFilm">
+        <a href="index.php?codePage=ListeGenres">
             <div class="boutons">
                 Listes des Genres
             </div>
         </a>
-        <a href="index.php?codePage=ListeFilm">
+        <a href="index.php?codePage=ListeRealisateurs">
             <div class="boutons">
                 Listes des Réalisateurs
             </div>
