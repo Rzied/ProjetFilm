@@ -66,4 +66,28 @@ class FilmsManager
         }
         return $liste;  // tableau contenant les objets Films
     }
+
+    public static function getListByGenre(Genres $genre){
+        $id=(int) $genre->getIdGenre();
+        $db = DbConnect::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM Films where idGenre=$id");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Films($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Films
+    }
+
+    public static function updateGenreDefault(Films $films){
+        $db = DbConnect::getDb();
+        $q = $db->prepare("UPDATE Films SET idGenre=:idGenre WHERE idFilm=:idFilm");
+        $q->bindValue(":idFilm", $films->getIdFilm());
+        $q->bindValue(":idGenre", $films->getIdGenre());
+        $q->execute();
+    }
+
 }
