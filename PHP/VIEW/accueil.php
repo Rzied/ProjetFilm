@@ -23,6 +23,11 @@ echo '
                 Listes des Réalisateurs
             </div>
         </a>
+        <a href="index.php?codePage=ListeStudios">
+            <div class="boutons">
+                Listes des Studios
+            </div>
+        </a>
         </div>
         <div></div>
     </nav>
