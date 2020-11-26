@@ -75,4 +75,19 @@ class RealisationsManager
         }
         return $liste;  // tableau contenant les objets Participations
     }
+
+    public static function getListByRealisateur(Realisateurs $realisateurs){
+        $id=(int) $realisateurs->getIdRealisateur();
+        $db = DbConnect::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM Realisations where idRealisateur=$id");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Realisations($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Participations
+    }
 }

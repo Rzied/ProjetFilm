@@ -42,11 +42,11 @@ $choix = RealisateursManager::findById($_GET['id']);
         <input name="prenomRealisateur" <?php if($mode != "ajout") echo 'value= "'.$choix->getPrenomRealisateur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
     </div>
     <div>
-        <label for="paysOrigineRealisateur">E mail : </label>
+        <label for="paysOrigineRealisateur">Pays d'origine : </label>
         <input name="paysOrigineRealisateur" <?php if($mode != "ajout") echo 'value= "'. $choix->getPaysOrigineRealisateur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled' ; ?>/>
     </div>
     <div>
-        <label for="dateDeNaissanceRealisateur">Mot de passe : </label>
+        <label for="dateDeNaissanceRealisateur">Date de naissance : </label>
         <input type="date" name="dateDeNaissanceRealisateur" <?php if($mode != "ajout") echo 'value= "'. $choix->getDateDeNaissanceRealisateur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled' ; ?>/>
     </div>
 <?php 
