@@ -3,7 +3,7 @@ echo '
     <header>
         <div><img class="logo" src="logo.png" alt="logo"></div>
         <div class="titre colonne centrer"><div class="centrer">Mediatech !</div><div class="soustitre centrer">Le site par excellence pour retrouver les meilleurs films du moment !</div></div>
-        <div><img class="logo" src="logo.png" alt="logo"></div>
+        <div><img class="logo" src="../../IMG/logo.png" alt="logo"></div>
     </header>
     <nav>
         <div></div>
@@ -24,7 +24,7 @@ echo '
     <div></div>
     <div class="block accueilfond grosflex">
         
-        <img class="grosflex" src="main.jpg" alt="">
+        <img class="grosflex" src="../../IMG/main.jpg" alt="image de fond">
     </div>
     <div></div>
 </div>
