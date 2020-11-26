@@ -145,7 +145,7 @@ Class Films{
     * @return String
     */
     public function toString(){
-        return "idFilm : ".$this->getIdFilm()." nomFilm : ".$this->getNomFilm()." date : ".$this->getDateFilm()->format("Y-m-d")." cout : ".$this->getCoutFilm()." durée :".$this->getDureeFilm()
+        return "idFilm : ".$this->getIdFilm()." nomFilm : ".$this->getNomFilm()." date : ".$this->getDateFilm()." cout : ".$this->getCoutFilm()." durée :".$this->getDureeFilm()
         ." synopsis :".$this->getSynopFilm()." idStudio :".$this->getIdStudio()." idGenre:".$this->getIdGenre();
     }
 
