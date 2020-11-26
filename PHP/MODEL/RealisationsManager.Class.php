@@ -60,4 +60,19 @@ class RealisationsManager
         }
         return $liste;  // tableau contenant les objets Realisations
     }
+
+    public static function getListByFilm(Films $films){
+        $id=(int) $films->getIdFilm();
+        $db = DbConnect::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM Realisations where idFilm=$id");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Realisations($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Participations
+    }
 }

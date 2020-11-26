@@ -4,7 +4,7 @@ $mode = $_GET['mode'];
 switch ($mode){
 case "ajout" :
     {
-        echo '<form action="index.php?CodePage=actionsGenres&mode=ajoutGenre" method="POST">';
+        echo '<form action="index.php?codePage=actionsGenres&mode=ajoutGenre" method="POST">';
         break;
     }
 case "edit" :
@@ -14,12 +14,12 @@ case "edit" :
     }
 case "modif" :
     {
-        echo '<form action="index.php?CodePage=actionsGenres&mode=modifGenre" method="POST">';
+        echo '<form action="index.php?codePage=actionsGenres&mode=modifGenre" method="POST">';
     break;
     }
 case "delete" :
     {
-        echo '<form action="index.php?CodePage=actionsGenres&mode=delGenre" method="POST">';
+        echo '<form action="index.php?codePage=actionsGenres&mode=delGenre" method="POST">';
     break;
     }
 
@@ -31,14 +31,13 @@ $choix = GenresManager::findById($_GET['id']);
 }
 ?>
 
-
-    <?php if($mode != "ajout") echo  '<input name= "idRealisateur" value="'.$choix->getIdRealisateur().'"type= "hidden">';?>
+    <?php if($mode != "ajout") echo '<input name= "idGenre" value="'.$choix->getIdGenre().'" type= "hidden">'; ?>
     <div>
-        <label for="libelleGenre">Nom : </label>
+        <label for="libelleGenre">Libelle : </label>
         <input name="libelleGenre" <?php if($mode != "ajout") echo 'value= "'.$choix->getLibelleGenre().'"';if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
     </div>
     <div>
-        <label for="descGenre">E mail : </label>
+        <label for="descGenre">Description : </label>
         <input name="descGenre" <?php if($mode != "ajout") echo 'value= "'. $choix->getDescGenre().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled' ; ?>/>
     </div>
 <?php 
@@ -67,7 +66,7 @@ $choix = GenresManager::findById($_GET['id']);
     }
 // dans tous les cas, on met le bouton annuler
     ?>
-    <button><a href="index.php?CodePage=listeGenres">Annuler</a></button>
+    <button><a href="index.php?codePage=listeGenres">Annuler</a></button>
 </div>
 
 </form>

@@ -15,6 +15,7 @@ switch ($_GET['mode']) {
         }
     case "delActeur":
         {
+            //On récupère toutes les participations de l'acteur
             $listeParticipations=ParticipationsManager::getListByActeur($p);
             /**** Technique de suppression en cascade */
             foreach ($listeParticipations as $uneParticipation)
@@ -26,4 +27,4 @@ switch ($_GET['mode']) {
         }
 }
 
-//header("location:index.php?codePage=listeActeurs");
+header("location:index.php?codePage=listeActeurs");

@@ -32,6 +32,7 @@ $routes = [
     "default" => ["PHP/VIEW/", "Accueil", "Accueil"], 
 
     "listeFilms" => ["PHP/VIEW/", "ListeFilms", "Liste des Films"],
+    "formFilm" => ["PHP/VIEW/", "FormFilm", "Formulaire des acteurs"],
 
     "listeActeurs" => ["PHP/VIEW/", "ListeActeurs", "Liste des Acteurs"],
     "formActeur" => ["PHP/VIEW/", "FormActeur", "Formulaire des acteurs"],
@@ -39,6 +40,7 @@ $routes = [
 
     "listeGenres" => ["PHP/VIEW/", "ListeGenres", "Liste des Genres"],
     "formGenre" => ["PHP/VIEW/", "FormGenre", "Formulaire des Genres"],
+    "actionsGenres" => ["PHP/VIEW/", "ActionsGenres", "Formulaire des Genres"],
 
     "listeRealisateurs" => ["PHP/VIEW/", "ListeRealisateurs", "Liste des Realisateurs"],
     "formRealisateur" => ["PHP/VIEW/", "FormRealisateur", "Formulaire des Realisateurs"],
