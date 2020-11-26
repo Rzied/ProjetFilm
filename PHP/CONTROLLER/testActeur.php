@@ -46,7 +46,7 @@ var_dump($p);
 
 // on teste la suppression
 echo "on supprime un article" . '<br>';
-$pSuppr = ActeursManager::findById(3);
+$pSuppr = ActeursManager::findById(7);
 ActeursManager::delete($pSuppr);
 
 //on affiche la liste des produits

@@ -29,7 +29,16 @@ DbConnect::init();
 
 
 $routes = [
-    "default" => ["PHP/VIEW/", "listeproduits", "Liste des produits"], 
+    "default" => ["PHP/VIEW/", "ListeFilms", "Liste des films"], 
+
+    "listeFilms" => ["PHP/VIEW/", "ListeFilms", "Liste des Films"],
+
+    "listeActeurs" => ["PHP/VIEW/", "ListeActeurs", "Liste des Acteurs"],
+
+    "listeGenres" => ["PHP/VIEW/", "ListeGenres", "Liste des Genres"],
+
+    "listeRealisateurs" => ["PHP/VIEW/", "ListeRealisateurs", "Liste des Realisateurs"],
+
 ];
 
 

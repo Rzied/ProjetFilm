@@ -89,7 +89,7 @@ class Studios
      */
     public function toString()
     {
-        return "\nId : " . $this->getIdStudio() . "\nNom : " . $this->getNomStudio() . "\nPays : " . $this->getPaysStudio() . "\nFondateur : " . $this->getFondateurStudio() . "\nDate Creation : " . $this->getCreationStudio()->format('d/m/y');
+        return "\nId : " . $this->getIdStudio() . "\nNom : " . $this->getNomStudio() . "\nPays : " . $this->getPaysStudio() . "\nFondateur : " . $this->getFondateurStudio() . "\nDate Creation : " . $this->getCreationStudio();
     }
 
 }

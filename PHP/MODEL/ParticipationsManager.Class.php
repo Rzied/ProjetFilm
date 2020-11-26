@@ -1,5 +1,5 @@
 <?php
-class ParticipationManager
+class ParticipationsManager
 {
     public static function add(Participations $obj)
     {
