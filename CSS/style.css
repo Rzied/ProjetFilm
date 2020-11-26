@@ -142,7 +142,7 @@ h2 {
 }
 
 .btn:hover {
-    background-color: rgb(105, 105, 104);
+    background: linear-gradient(#1b1b1b, #7a7a7a);
     font-size: 1.2em;
     border-radius: 0.4em;
     /* padding: 0.5em 1.7em; */
