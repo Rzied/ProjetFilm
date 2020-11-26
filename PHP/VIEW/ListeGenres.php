@@ -3,7 +3,7 @@
 echo '<div class = "colonne">
 <h2>Liste des Genres</h2>
 <div class = "liste colonne">';
-echo '<a class="ajout" href ="index.php?codePage=formGenre&mode=ajout">Ajouter</a>';
+echo '<a class="ajout btn" href ="index.php?codePage=formGenre&mode=ajout">Ajouter</a>';
 $genres = GenresManager::getList();
 foreach ($genres as $genre)
 {

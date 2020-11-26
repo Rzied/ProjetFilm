@@ -3,7 +3,7 @@
 echo '<div class = "colonne">
 <h2>Liste des Studios</h2>
 <div class = "liste colonne">';
-echo '<a class="ajout" href ="index.php?codePage=formStudio&mode=ajout">Ajouter</a>';
+echo '<a class="ajout btn" href ="index.php?codePage=formStudio&mode=ajout">Ajouter</a>';
 $studios = StudiosManager::getList();
 foreach ($studios as $unstudio)
 {

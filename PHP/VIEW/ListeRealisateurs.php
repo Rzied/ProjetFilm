@@ -3,7 +3,7 @@
 echo '<div class = "colonne">
 <h2>Liste des realisateurs</h2>
 <div class = "liste colonne">';
-echo '<a class="ajout" href ="index.php?codePage=formRealisateur&mode=ajout">Ajouter</a>';
+echo '<a class="ajout btn" href ="index.php?codePage=formRealisateur&mode=ajout">Ajouter</a>';
 $realisateurs = RealisateursManager::getList();
 foreach ($realisateurs as $realisateur)
 {
