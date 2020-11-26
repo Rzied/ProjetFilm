@@ -19,42 +19,42 @@ DbConnect::init();
 
 /* Test Manager */
 
-// // on teste la recherche par ID
+// on teste la recherche par ID
 // echo 'recherche id = 1' . '<br>';
 // $p = FilmsManager::findById(1);
 // var_dump($p);
 
 // // on teste l'ajout
-// echo "ajout d'un produit" . '<br>';
-// $pNew = new Produits(["libelleProduit" => "cahier", "prix" => 5, "dateDePeremption" => '2020-12-31']);
-// ProduitsManager::add($pNew);
+// echo "ajout d'un Film" . '<br>';
+// $pNew = new Films(["nomFilm" => "NomduFilmici", "dateFilm" => "2000-06-27", "coutFilm" => 123456789, "dureeFilm" => 139, "synopFilm" => "Ici c'est le synopsis du film", "idStudio" => 1, "idGenre" => 1]);
+// FilmsManager::add($pNew);
 
-// //on affiche la liste des produits
+//on affiche la liste des Films
 // echo "Liste des articles" . '<br>';
-// $tableau = ProduitsManager::getList();
-// foreach ($tableau as $unProduit)
+// $tableau = FilmsManager::getList();
+// foreach ($tableau as $unFilm)
 // {
-//     echo $unProduit->toString() . '<br>';
+//     echo $unFilm->toString() . '<br>';
 // }
 
 // // on teste la mise à jour
 // echo "on met à jour l'id 1" . '<br>';
-// $p->setLibelleProduit($p->getLibelleProduit() . 'sss');
-// ProduitsManager::update($p);
-// $pRecharge = ProduitsManager::findById(1);
+// $p->setnomFilm($p->getnomFilm() . 'sss');
+// FilmsManager::update($p);
+// $pRecharge = FilmsManager::findById(1);
 // var_dump($pRecharge);
 
 // // on teste la suppression
 // echo "on supprime un article" . '<br>';
-// $pSuppr = ProduitsManager::findById(3);
-// ProduitsManager::delete($pSuppr);
+// $pSuppr = FilmsManager::findById(3);
+// FilmsManager::delete($pSuppr);
 
-// //on affiche la liste des produits
+// //on affiche la liste des Films
 // echo "liste des articles" . '<br>';
-// $tableau = ProduitsManager::getList();
-// foreach ($tableau as $unProduit)
+// $tableau = FilmsManager::getList();
+// foreach ($tableau as $unFilm)
 // {
-//     echo $unProduit->toString() . '<br>';
+//     echo $unFilm->toString() . '<br>';
 // }
 
 

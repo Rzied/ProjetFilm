@@ -89,7 +89,7 @@ class Realisateurs
         return "\nid Realisateur  : ".$this->getIdRealisateur()
         ." \nNom du realisateur : ".$this->getNomRealisateur()
         ." \nPrenom du realisateur : ".$this->getPrenomRealisateur()
-        ." \nDate de naissance du realisateur : ".$this->getDateDeNaissanceRealisateur()->format('d-m-Y')
+        ." \nDate de naissance du realisateur : ".$this->getDateDeNaissanceRealisateur()
         . " \nPays d'origine du réalisateur : ".$this->getPaysOrigineRealisateur();
     }
 
@@ -97,7 +97,7 @@ class Realisateurs
     {
         $auj = new DateTime('now');
         $interval = $auj->diff($this->getDateDeNaissanceRealisateur(), true); //diff renvoi une DateIntervalle, true oblige cet interval a être positif
-        $annee = $interval->format('%y'); // on *1 pour avoir un int
+        $annee = $interval->format('%y');
         return intval($annee);
     }
 }
