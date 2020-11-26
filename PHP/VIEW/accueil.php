@@ -3,18 +3,26 @@ echo '
     <nav>
         <div></div>
         <div>
+        <a href="index.php?codePage=ListeFilm">
             <div class="boutons">
                 Liste des Films
             </div>
+        </a>
+        <a href="index.php?codePage=ListeFilm">
             <div class="boutons">
                 Liste des Acteurs
             </div>
+        </a>
+        <a href="index.php?codePage=ListeFilm">
             <div class="boutons">
                 Listes des Genres
             </div>
+        </a>
+        <a href="index.php?codePage=ListeFilm">
             <div class="boutons">
-                Listes des Réalisteurs
+                Listes des Réalisateurs
             </div>
+        </a>
         </div>
         <div></div>
     </nav>
