@@ -15,7 +15,10 @@ echo '
                 Liste des Acteurs
             </div>
             <div class="boutons">
-                Listes des Studios
+                Listes des Genres
+            </div>
+            <div class="boutons">
+                Listes des Réalisteurs
             </div>
         </div>
         <div></div>
