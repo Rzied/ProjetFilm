@@ -4,7 +4,7 @@ $mode = $_GET['mode'];
 switch ($mode){
 case "ajout" :
     {
-        echo '<form action="index.php?code=actionActeur&mode=ajoutActeur" method="POST">';
+        echo '<form action="index.php?CodePagePage=actionActeur&mode=ajoutActeur" method="POST">';
         break;
     }
 case "edit" :
@@ -14,12 +14,12 @@ case "edit" :
     }
 case "modif" :
     {
-        echo '<form action="index.php?code=actionActeur&mode=modifActeur" method="POST">';
+        echo '<form action="index.php?CodePage=actionActeur&mode=modifActeur" method="POST">';
     break;
     }
 case "delete" :
     {
-        echo '<form action="index.php?code=actionActeur&mode=delActeur" method="POST">';
+        echo '<form action="index.php?CodePage=actionActeur&mode=delActeur" method="POST">';
     break;
     }
 
@@ -75,7 +75,7 @@ $choix = ActeursManager::findById($_GET['id']);
     }
 // dans tous les cas, on met le bouton annuler
     ?>
-    <button><a href="index.php?code=listeActeurs">Annuler</a></button>
+    <button><a href="index.php?CodePage=listeActeurs">Annuler</a></button>
 </div>
 
 </form>

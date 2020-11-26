@@ -39,6 +39,7 @@ $routes = [
     "listeGenres" => ["PHP/VIEW/", "ListeGenres", "Liste des Genres"],
 
     "listeRealisateurs" => ["PHP/VIEW/", "ListeRealisateurs", "Liste des Realisateurs"],
+    "formRealisateur" => ["PHP/VIEW/", "FormRealisateur", "Formulaire des acteurs"],
 
 ];
 
