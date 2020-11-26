@@ -86,7 +86,7 @@ class FilmsManager
         $db = DbConnect::getDb();
         $q = $db->prepare("UPDATE Films SET idGenre=:idGenre WHERE idFilm=:idFilm");
         $q->bindValue(":idFilm", $films->getIdFilm());
-        $q->bindValue(":idGenre", $films->getIdGenre());
+        $q->bindValue(":idGenre", 1);
         $q->execute();
     }
 
