@@ -8,7 +8,7 @@ class Realisateurs
     private $_nomRealisateur;
     private $_prenomRealisateur;
     private $_dateDeNaissanceRealisateur;
-    private $_paysOrigineRealiseur;
+    private $_paysOrigineRealisateur;
 
     /*==========    Accesseurs   ==========*/
     public function getIdRealisateur()
@@ -51,14 +51,14 @@ class Realisateurs
         $this->_dateDeNaissanceRealisateur = $dateDeNaissanceRealisateur;
     }
 
-    public function getPaysOrigineRealiseur()
+    public function getPaysOrigineRealisateur()
     {
-        return $this->_paysOrigineRealiseur;
+        return $this->_paysOrigineRealisateur;
     }
 
-    public function setPaysOrigineRealiseur(string $paysOrigineRealiseur)
+    public function setPaysOrigineRealisateur(string $paysOrigineRealisateur)
     {
-        $this->_paysOrigineRealiseur = $paysOrigineRealiseur;
+        $this->_paysOrigineRealisateur = $paysOrigineRealisateur;
     }
     
     /*==========    Constructeur   ==========  */
@@ -90,7 +90,7 @@ class Realisateurs
         ." \nNom du realisateur : ".$this->getNomRealisateur()
         ." \nPrenom du realisateur : ".$this->getPrenomRealisateur()
         ." \nDate de naissance du realisateur : ".$this->getDateDeNaissanceRealisateur()->format('d-m-Y')
-        . " \nPays d'origine du réalisateur : ".$this->getPaysOrigineRealiseur();
+        . " \nPays d'origine du réalisateur : ".$this->getPaysOrigineRealisateur();
     }
 
     public function age()
