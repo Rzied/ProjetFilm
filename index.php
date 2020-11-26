@@ -45,6 +45,7 @@ $routes = [
 
     "listeRealisateurs" => ["PHP/VIEW/", "ListeRealisateurs", "Liste des Realisateurs"],
     "formRealisateur" => ["PHP/VIEW/", "FormRealisateur", "Formulaire des Realisateurs"],
+    "actionsRealisateurs" => ["PHP/VIEW/", "ActionsRealisateurs", "Formulaire des Realisateurs"],
 
     "listeStudios" => ["PHP/VIEW/", "ListeStudios", "Liste des Studios"],
     "formStudio" => ["PHP/VIEW/", "FormStudio", "Formulaire des Studios"],
