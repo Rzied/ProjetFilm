@@ -3,27 +3,27 @@ echo '
     <nav>
         <div></div>
         <div>
-        <a href="index.php?codePage=listeFilms">
+        <a class="Accueil" href="index.php?codePage=listeFilms">
             <div class="boutons">
                 Liste des Films
             </div>
         </a>
-        <a href="index.php?codePage=listeActeurs">
+        <a class="Accueil" href="index.php?codePage=listeActeurs">
             <div class="boutons">
                 Liste des Acteurs
             </div>
         </a>
-        <a href="index.php?codePage=listeGenres">
+        <a class="Accueil" href="index.php?codePage=listeGenres">
             <div class="boutons">
                 Listes des Genres
             </div>
         </a>
-        <a href="index.php?codePage=listeRealisateurs">
+        <a class="Accueil" href="index.php?codePage=listeRealisateurs">
             <div class="boutons">
                 Listes des Réalisateurs
             </div>
         </a>
-        <a href="index.php?codePage=listeStudios">
+        <a class="Accueil" href="index.php?codePage=listeStudios">
             <div class="boutons">
                 Listes des Studios
             </div>

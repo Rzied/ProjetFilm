@@ -41,9 +41,10 @@ header {
     background-color: #64030D;
 }
 
-a {
+.accueil {
     text-decoration: none;
     color: white;
+    
 }
 .logo {
     border-radius: 2em; 
@@ -89,4 +90,7 @@ nav {
 
 .bcgblack {
     background-color: black;
+}
+h2{
+    text-align: center;
 }
