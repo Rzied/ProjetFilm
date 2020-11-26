@@ -32,7 +32,7 @@ $choix = ActeursManager::findById($_GET['id']);
 ?>
 
 
-    <input name= "idActeur" <?php if($mode != "ajout") echo 'value="'.$choix->getIdActeur().'"'; ?> type= "hidden">
+    <?php if($mode != "ajout") echo  '<input name= "idActeur" value="'.$choix->getIdActeur().'"type= "hidden">';?>
     <div>
         <label for="nomActeur">Nom : </label>
         <input name="nomActeur" <?php if($mode != "ajout") echo 'value= "'.$choix->getNomActeur().'"';if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
