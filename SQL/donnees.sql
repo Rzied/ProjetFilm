@@ -11,11 +11,12 @@ INSERT INTO `studios`(`idStudio`, `nomStudio`, `paysStudio`, `fondateurStudio`, 
 INSERT INTO `realisateurs`(`idRealisateur`, `nomRealisateur`, `prenomRealisateur`, `dateDeNaissanceRealisateur`, `paysOrigineRealisateur`) VALUES (NULL,"Nolan","Christopher","1970-07-30","Angleterre");
 INSERT INTO `realisateurs`(`idRealisateur`, `nomRealisateur`, `prenomRealisateur`, `dateDeNaissanceRealisateur`, `paysOrigineRealisateur`) VALUES (NULL,"Zemeckis","Robert","1952-05-14","Etats-Unis");
 
+INSERT INTO `genres`(`idGenre`, `libelleGenre`, `descGenre`) VALUES (NULL,"Pas de genre","Genre non renseigné");
 INSERT INTO `genres`(`idGenre`, `libelleGenre`, `descGenre`) VALUES (NULL,"Action","Film au rythme effrene");
 INSERT INTO `genres`(`idGenre`, `libelleGenre`, `descGenre`) VALUES (NULL,"Comedie","Film a voir en famille");
 
-INSERT INTO `films`(`idFilm`, `nomFilm`, `dateFilm`, `coutFilm`, `dureeFilm`, `synopFilm`, `idStudio`, `idGenre`) VALUES (NULL,"The Dark Knight, Le Chevalier Noir","2008-08-13",185,152,"Batman entreprend de démanteler les dernières organisations criminelles de Gotham. Mais il se heurte bientôt à un nouveau génie du crime qui répand la terreur et le chaos dans la ville : le Joker…",2,1);
-INSERT INTO `films`(`idFilm`, `nomFilm`, `dateFilm`, `coutFilm`, `dureeFilm`, `synopFilm`, `idStudio`, `idGenre`) VALUES (NULL,"Forrest Gump","1994-10-05",300000000,140,"Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump.",1,2);
+INSERT INTO `films`(`idFilm`, `nomFilm`, `dateFilm`, `coutFilm`, `dureeFilm`, `synopFilm`, `idStudio`, `idGenre`) VALUES (NULL,"The Dark Knight, Le Chevalier Noir","2008-08-13",185,152,"Batman entreprend de démanteler les dernières organisations criminelles de Gotham. Mais il se heurte bientôt à un nouveau génie du crime qui répand la terreur et le chaos dans la ville : le Joker…",2,2);
+INSERT INTO `films`(`idFilm`, `nomFilm`, `dateFilm`, `coutFilm`, `dureeFilm`, `synopFilm`, `idStudio`, `idGenre`) VALUES (NULL,"Forrest Gump","1994-10-05",300000000,140,"Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump.",1,3);
 
 
 INSERT INTO `realisations`(`idRealisation`, `idRealisateur`, `idFilm`, `dateDebutRealisation`, `dateFinRealisation`) VALUES (NULL,1,1,"2006-07-31","2008-07-09");
