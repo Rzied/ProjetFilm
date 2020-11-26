@@ -79,4 +79,3 @@ $choix = ActeursManager::findById($_GET['id']);
 </div>
 
 </form>
-</form>
