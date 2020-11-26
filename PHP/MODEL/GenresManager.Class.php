@@ -4,17 +4,17 @@ class GenresManager
     public static function add(Genres $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Genres (libelleGenre,desGenre) VALUES (:libelleGenre,:desGenre)");
+        $q = $db->prepare("INSERT INTO Genres (libelleGenre,descGenre) VALUES (:libelleGenre,:descGenre)");
         $q->bindValue(":libelleGenre", $obj->getLibelleGenre());
-        $q->bindValue(":desGenre", $obj->getDesGenre());
+        $q->bindValue(":descGenre", $obj->getDescGenre());
         $q->execute();
     }
     public static function update(Genres $obj)
     {
         $db=DbConnect::getDb();
-        $q=$db->prepare("UPDATE Genres SET libelleGenre=:libelleGenre,desGenre=:desGenre WHERE idGenre=:idGenre");
+        $q=$db->prepare("UPDATE Genres SET libelleGenre=:libelleGenre,descGenre=:descGenre WHERE idGenre=:idGenre");
         $q->bindValue(":libelleGenre",$obj->getLibelleGenre());
-        $q->bindValue(":desGenre",$obj->getDesGenre());
+        $q->bindValue(":descGenre",$obj->getDescGenre());
         $q->bindValue("idGenre",$obj->getIdGenre());
         $q->execute();
     }

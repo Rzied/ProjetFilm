@@ -7,7 +7,7 @@ class Acteurs
     private $_nomActeur;
     private $_prenomActeur;
     private $_origineActeur;
-    private $dateDeNaissanceActeur;
+    private $_dateDeNaissanceActeur;
 
     /*****************Accesseurs***************** */
 
@@ -53,12 +53,12 @@ class Acteurs
 
     public function getDateDeNaissanceActeur()
     {
-        return $this->dateDeNaissanceActeur;
+        return $this->_dateDeNaissanceActeur;
     }
 
     public function setDateDeNaissanceActeur($dateDeNaissanceActeur)
     {
-        $this->dateDeNaissanceActeur = $dateDeNaissanceActeur;
+        $this->_dateDeNaissanceActeur = $dateDeNaissanceActeur;
     }
     /*****************Constructeur***************** */
 
@@ -89,7 +89,7 @@ class Acteurs
      */
     public function toString()
     {
-        return "\nID : ".$this->getIdActeur()."\nNom : ".$this->getNomActeur()."\nPrenom : ".$this->getPrenomActeur()."\nOrigine : ".$this->getOrigineActeur()."\nDate de naissance : ".$this->getDateDeNaissanceActeur()->format("d/m/y") ;
+        return "\nID : ".$this->getIdActeur()."\nNom : ".$this->getNomActeur()."\nPrenom : ".$this->getPrenomActeur()."\nOrigine : ".$this->getOrigineActeur()."\nDate de naissance : ".$this->getDateDeNaissanceActeur() ;
 
     }
 

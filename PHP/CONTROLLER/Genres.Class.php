@@ -5,7 +5,7 @@ class Genres
     /*****************Attributs***************** */
     private $_idGenre ;
     private $_libelleGenre;
-    private $_desGenre;
+    private $_descGenre;
 
     /*****************Accesseurs***************** */
 
@@ -29,14 +29,14 @@ class Genres
         $this->_libelleGenre = $libelleGenre;
     }
 
-    public function getDesGenre()
+    public function getDescGenre()
     {
-        return $this->_desGenre;
+        return $this->_descGenre;
     }
 
-    public function setDesGenre($desGenre)
+    public function setDescGenre($descGenre)
     {
-        $this->_desGenre = $desGenre;
+        $this->_descGenre = $descGenre;
     }
     /*****************Constructeur***************** */
 
@@ -67,7 +67,7 @@ class Genres
      */
     public function toString()
     {
-        return "\nId : " . $this->getIdGenre() . "\nLibelle : " . $this->getLibelleGenre() . "\nDescription : " . $this->getDesGenre();
+        return "\nId : " . $this->getIdGenre() . "\nLibelle : " . $this->getLibelleGenre() . "\nDescription : " . $this->getDescGenre();
     }
 
 }
