@@ -48,4 +48,4 @@ switch ($_GET['mode']) {
         }
 }
 
-//header("location:index.php?codePage=listeGenres");
+header("location:index.php?codePage=listeGenres");
