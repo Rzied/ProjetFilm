@@ -55,4 +55,19 @@ class ParticipationsManager
         return $liste; // tableau contenant les objets Produits
     }
 
+    public static function getListByActeur(Acteurs $acteur){
+        $id=(int) $acteur->getIdActeur();
+        $db = DbConnect::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM Participations where idActeur=$id");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Participations($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Participations
+    }
+
 }
