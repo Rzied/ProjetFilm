@@ -32,7 +32,7 @@ $choix = ActeursManager::findById($_GET['id']);
 ?>
 
 
-    <input name= "idActeur" value="<?php if($mode != "ajout") echo $choix->getIdActeur(); ?>" type= "hidden">
+    <input name= "idActeur" <?php if($mode != "ajout") echo 'value="'.$choix->getIdActeur().'"'; ?> type= "hidden">
     <div>
         <label for="nomActeur">Nom : </label>
         <input name="nomActeur" <?php if($mode != "ajout") echo 'value= "'.$choix->getNomActeur().'"';if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
@@ -42,11 +42,11 @@ $choix = ActeursManager::findById($_GET['id']);
         <input name="prenomActeur" <?php if($mode != "ajout") echo 'value= "'.$choix->getPrenomActeur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
     </div>
     <div>
-        <label for="origineActeur">E mail : </label>
+        <label for="origineActeur">Origine : </label>
         <input name="origineActeur" <?php if($mode != "ajout") echo 'value= "'. $choix->getOrigineActeur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled' ; ?>/>
     </div>
     <div>
-        <label for="dateDeNaissanceActeur">Mot de passe : </label>
+        <label for="dateDeNaissanceActeur">Date de Naissance : </label>
         <input type="date" name="dateDeNaissanceActeur" <?php if($mode != "ajout") echo 'value= "'. $choix->getDateDeNaissanceActeur().'"';  if($mode=="edit" || $mode=="delete") echo '" disabled' ; ?>/>
     </div>
 <?php 
