@@ -32,7 +32,7 @@ $choix = GenresManager::findById($_GET['id']);
 ?>
 
 
-    <input name= "idGenre" value="<?php if($mode != "ajout") echo $choix->getIdGenre(); ?>" type= "hidden">
+    <?php if($mode != "ajout") echo  '<input name= "idRealisateur" value="'.$choix->getIdRealisateur().'"type= "hidden">';?>
     <div>
         <label for="libelleGenre">Nom : </label>
         <input name="libelleGenre" <?php if($mode != "ajout") echo 'value= "'.$choix->getLibelleGenre().'"';if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>

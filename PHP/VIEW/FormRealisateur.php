@@ -4,7 +4,7 @@ $mode = $_GET['mode'];
 switch ($mode){
 case "ajout" :
     {
-        echo '<form action="index.php?CodePage=actionsRealisateurs&mode=ajoutRealisateur" method="POST">';
+        echo '<form action="index.php?codePage=actionsRealisateurs&mode=ajoutRealisateur" method="POST">';
         break;
     }
 case "edit" :
@@ -14,12 +14,12 @@ case "edit" :
     }
 case "modif" :
     {
-        echo '<form action="index.php?CodePage=actionsRealisateurs&mode=modifRealisateur" method="POST">';
+        echo '<form action="index.php?codePage=actionsRealisateurs&mode=modifRealisateur" method="POST">';
     break;
     }
 case "delete" :
     {
-        echo '<form action="index.php?CodePage=actionsRealisateurs&mode=delRealisateur" method="POST">';
+        echo '<form action="index.php?codePage=actionsRealisateurs&mode=delRealisateur" method="POST">';
     break;
     }
 
@@ -32,7 +32,7 @@ $choix = RealisateursManager::findById($_GET['id']);
 ?>
 
 
-    <input name= "idRealisateur" value="<?php if($mode != "ajout") echo $choix->getIdRealisateur(); ?>" type= "hidden">
+<?php if($mode != "ajout") echo  '<input name= "idRealisateur" value="'.$choix->getIdRealisateur().'"type= "hidden">';?>
     <div>
         <label for="nomRealisateur">Nom : </label>
         <input name="nomRealisateur" <?php if($mode != "ajout") echo 'value= "'.$choix->getNomRealisateur().'"';if($mode=="edit" || $mode=="delete") echo '" disabled'; ?>/>
@@ -75,7 +75,7 @@ $choix = RealisateursManager::findById($_GET['id']);
     }
 // dans tous les cas, on met le bouton annuler
     ?>
-    <button><a href="index.php?CodePage=listeRealisateurs">Annuler</a></button>
+    <button><a href="index.php?codePage=listeRealisateurs">Annuler</a></button>
 </div>
 
 </form>
