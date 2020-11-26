@@ -4,7 +4,7 @@ $mode = $_GET['mode'];
 switch ($mode){
 case "ajout" :
     {
-        echo '<form action="index.php?codePage=actionActeur&mode=ajoutActeur" method="POST">';
+        echo '<form action="index.php?codePage=actionsActeurs&mode=ajoutActeur" method="POST">';
         break;
     }
 case "edit" :
@@ -14,12 +14,12 @@ case "edit" :
     }
 case "modif" :
     {
-        echo '<form action="index.php?codePage=actionActeur&mode=modifActeur" method="POST">';
+        echo '<form action="index.php?codePage=actionsActeurs&mode=modifActeur" method="POST">';
     break;
     }
 case "delete" :
     {
-        echo '<form action="index.php?codePage=actionActeur&mode=delActeur" method="POST">';
+        echo '<form action="index.php?codePage=actionsActeurs&mode=delActeur" method="POST">';
     break;
     }
 
