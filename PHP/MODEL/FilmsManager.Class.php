@@ -90,4 +90,26 @@ class FilmsManager
         $q->execute();
     }
 
+    public static function getListByStudio(Studios $studio){
+        $id=(int) $studio->getIdStudio();
+        $db = DbConnect::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM Films where idStudio=$id");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Films($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Films
+    }
+
+    public static function updateStudioDefault(Films $films){
+        $db = DbConnect::getDb();
+        $q = $db->prepare("UPDATE Films SET idStudio=:idStudio WHERE idFilm=:idFilm");
+        $q->bindValue(":idFilm", $films->getIdFilm());
+        $q->bindValue(":idStudio", 1);
+        $q->execute();
+    }
 }
