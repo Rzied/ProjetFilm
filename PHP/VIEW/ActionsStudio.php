@@ -25,4 +25,4 @@ switch ($_GET['mode']) {
         }
 }
 
-//header("location:index.php?codePage=listeActeurs");
+header("location:index.php?codePage=listeActeurs");
